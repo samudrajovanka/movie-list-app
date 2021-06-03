@@ -1,0 +1,15 @@
+.title {
+  color: #312e81;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 50%;
+    height: 5px;
+    display: block;
+    background-color: #312e81;
+    border-radius: 7px;
+    position: absolute;
+    bottom: 0px;
+  }
+}
