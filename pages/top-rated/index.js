@@ -33,7 +33,7 @@ export default function TopRated(props) {
                 }}
               key={movie.id}
             >
-              <a className="cursor-pointerw-full sm:w-60 md:w-48 xl:w-48">
+              <a className="cursor-pointer w-full sm:w-60 md:w-48 xl:w-48">
                 <CardMovie
                   title={movie.title}
                   release={movie.release_date}
