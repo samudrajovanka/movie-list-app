@@ -100,12 +100,18 @@ export default function MovieDetail(props) {
 
 export const getServerSideProps = async (ctx) => {
   const { movie_id } = ctx.query;
-  
   const resMovie = await fetch(createUrlApi(`/movie/${movie_id}`));
   const movie = await resMovie.json();
+  console.log(movie)
 
   const resSimilarMovies = await fetch(createUrlApi(`/movie/${movie_id}/similar`));
   const similarMovies = await resSimilarMovies.json();
+
+  if (movie.success === false) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {

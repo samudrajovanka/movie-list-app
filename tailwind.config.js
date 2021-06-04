@@ -5,11 +5,7 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      screens: {
-        'android': '360px'
-      },
-    }
+    extend: {}
   },
   variants: {},
   plugins: [
