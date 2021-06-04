@@ -29,7 +29,7 @@ export default function MovieDetail(props) {
         <div>
           <h2 className="text-3xl font-bold text-indigo-900">{props.movie.original_title}</h2>
           {/* {adult} */}
-          <div className="flex flex-wrap gap-2 mt-1">
+          <div className="flex flex-wrap gap-x-2 mt-1">
             {props.movie.genres.map((genre, i) => {
               return (
                 <Badge
