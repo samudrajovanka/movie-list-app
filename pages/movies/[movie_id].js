@@ -18,15 +18,16 @@ export default function MovieDetail(props) {
 
   return (
     <Layout title="Detail Movie">
-      <div className="flex gap-5">
-        <div className="flex-none relative h-80 w-60 rounded-2xl overflow-hidden">
+      <div className="flex flex-col md:flex-row gap-5">
+        <div className="flex-none relative h-80 place-self-center md:place-self-auto w-60 rounded-2xl overflow-hidden">
           <Image
             src={`http://image.tmdb.org/t/p/w500/${props.movie.poster_path}`}
             layout="fill"
+            objectFit="cover"
           />
         </div>
         <div>
-          <h2 className="text-3xl font-bold">{props.movie.original_title}</h2>
+          <h2 className="text-3xl font-bold text-indigo-900">{props.movie.original_title}</h2>
           {/* {adult} */}
           <div className="flex gap-2 mt-1">
             {props.movie.genres.map((genre, i) => {
@@ -41,25 +42,27 @@ export default function MovieDetail(props) {
           {adult}
 
           <div className="my-5">
-            <h3 className="text-xl mb-1">Data</h3>
+            <h3 className="text-xl mb-1 text-indigo-900">Data</h3>
             <table>
-              <tr>
-                <td width={150}>Companie</td>
-                <td>: {props.movie.production_companies[0].name}</td>
-              </tr>
-              <tr>
-                <td>Release Date</td>
-                <td>: {props.movie.release_date}</td>
-              </tr>
-              <tr>
-                <td>Rate</td>
-                <td>: {props.movie.vote_average * 10}%</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td width={150} className="font-bold">Companie</td>
+                  <td>{props.movie.production_companies[0].name}</td>
+                </tr>
+                <tr>
+                  <td className="font-bold">Release Date</td>
+                  <td>{props.movie.release_date}</td>
+                </tr>
+                <tr>
+                  <td className="font-bold">Rate</td>
+                  <td>{props.movie.vote_average * 10}%</td>
+                </tr>
+              </tbody>
             </table>
           </div>
 
           <div className="my-5">
-            <h3 className="text-xl mb-1">Overview</h3>
+            <h3 className="text-xl mb-1 text-indigo-900">Overview</h3>
             <p>{props.movie.overview}</p>
           </div>
         </div>
@@ -67,15 +70,18 @@ export default function MovieDetail(props) {
       
       <hr className="my-5"/>
       <div>
-        <h2 className="text-2xl mb-1">Similar Movies</h2>
-        <div className="flex flex-wrap justify-between gap-8 my-5">
+        <h2 className="text-2xl mb-1 text-indigo-900">Similar Movies</h2>
+        <div className="flex flex-wrap justify-between gap-4 my-5">
         {props.similarMovies.results.map((movie) => {
           return (
             <Link
-              href="/"
+              href={{
+                  pathname: '/movies/[movie_id]',
+                  query: { movie_id: movie.id }
+                }}
               key={movie.id}
             >
-              <a className="cursor-pointer">
+              <a className="cursor-pointer w-full sm:w-60 md:w-48 xl:w-48">
                 <CardMovie
                   title={movie.title}
                   release={movie.release_date}

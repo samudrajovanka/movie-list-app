@@ -41,6 +41,7 @@ export default function Navbar() {
                 <Link href="/popular">
                   <a
                     className={`${styles.link} ${(router.pathname === '/popular') ? styles.active : ''} relative inline-block mx-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white`}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
                   >
                     Popular
                   </a>
@@ -50,6 +51,7 @@ export default function Navbar() {
                 <Link href="/now-playing">
                   <a
                     className={`${styles.link} ${(router.pathname === '/now-playing') ? styles.active : ''} relative inline-block mx-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white`}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
                   >
                     Now Playing
                   </a>
@@ -59,6 +61,7 @@ export default function Navbar() {
                 <Link href="/up-coming">
                   <a
                     className={`${styles.link} ${(router.pathname === '/up-coming') ? styles.active : ''} relative inline-block mx-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white`}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
                   >
                     Up Coming
                   </a>
@@ -68,6 +71,7 @@ export default function Navbar() {
                 <Link href="/top-rated">
                   <a
                     className={`${styles.link} ${(router.pathname === '/top-rated') ? styles.active : ''} relative inline-block mx-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white`}
+                    onClick={() => setNavbarOpen(!navbarOpen)}
                   >
                     Top Rated
                   </a>

@@ -31,7 +31,7 @@ export default function Section(props) {
                 }}
                 key={movie.id}
               >
-                <a className="cursor-pointer">
+                <a className="cursor-pointer w-48">
                   <CardMovie
                     title={movie.title}
                     release={movie.release_date}

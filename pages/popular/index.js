@@ -27,10 +27,13 @@ export default function Popular(props) {
         {results.map((movie) => {
           return (
             <Link
-              href="/"
+              href={{
+                  pathname: '/movies/[movie_id]',
+                  query: { movie_id: movie.id }
+                }}
               key={movie.id}
             >
-              <a className="cursor-pointer">
+              <a className="cursor-pointer w-full sm:w-60 md:w-48 xl:w-48">
                 <CardMovie
                   title={movie.title}
                   release={movie.release_date}

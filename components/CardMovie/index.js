@@ -44,8 +44,8 @@ export default function CardMovie(props) {
   }, []);
 
   return (
-    <div className="w-48 p-2 pb-3 border-2 border-gray-200 rounded-xl hover:shadow-lg hover:bg-gray-100">
-      <div className="relative h-60">
+    <div className="w-full p-2 pb-3 border-2 border-gray-200 rounded-xl hover:shadow-lg hover:bg-gray-100">
+      <div className="relative h-80 md:h-60">
         <Image
           src={props.image}
           alt="Picture movie"

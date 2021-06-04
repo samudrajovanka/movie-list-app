@@ -22,14 +22,17 @@ export default function NowPlaying(props) {
   return (
     <Layout title="Now Playing">
       <Title title="Now Playing"/>
-      <div className="flex flex-wrap justify-between gap-8 my-5">
+      <div className="flex flex-wrap justify-between gap-4 my-5">
         {results.map((movie) => {
           return (
             <Link
-              href="/"
+              href={{
+                  pathname: '/movies/[movie_id]',
+                  query: { movie_id: movie.id }
+                }}
               key={movie.id}
             >
-              <a className="cursor-pointer">
+              <a className="cursor-pointer w-full sm:w-60 md:w-48 xl:w-48">
                 <CardMovie
                   title={movie.title}
                   release={movie.release_date}
